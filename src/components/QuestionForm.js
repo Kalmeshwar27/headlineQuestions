@@ -9,14 +9,6 @@ function QuestionForm({ onAddQuestion }) {
     info: "",
     readMore: ""
   });
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => setForm({ ...form, image: reader.result });
-    if (file) reader.readAsDataURL(file);
-  };
-
   const handleOptionChange = (i, value) => {
     const newOptions = [...form.options];
     newOptions[i] = value;
